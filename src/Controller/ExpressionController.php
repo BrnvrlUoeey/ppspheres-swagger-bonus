@@ -61,6 +61,7 @@ class ExpressionController extends AbstractController
      *     methods={"POST"}
      *     )
      */
+    // SEMANTICALLY UNCORRECT : SHOULD BE A PATCH IN THE COLLECTION (not available in API-Platform <2.5)
     public function createMany($texts): JsonResponse
     {
         $statuses = [];
@@ -117,10 +118,11 @@ class ExpressionController extends AbstractController
     /**
      * @Route("/expression/delete/{ids}",
      *     name="expression_delete_many",
-     *     methods={"DELETE"},
+     *     methods={"POST"},
      *     requirements={"ids"="\d+(,\d)*"}
      *       )
      */
+    // SEMANTICALLY UNCORRECT : SHOULD BE A PATCH IN THE COLLECTION (not available in API-Platform <2.5)
     public function deleteMany($ids)
     {
         $statuses = [];

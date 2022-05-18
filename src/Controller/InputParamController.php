@@ -62,6 +62,7 @@ class InputParamController extends AbstractController
      *     methods={"POST"}
      *     )
      */
+    // SEMANTICALLY UNCORRECT : SHOULD BE A PATCH IN THE COLLECTION (not available in API-Platform <2.5)
     public function createMany(array $texts): JsonResponse
     {
         $statuses = [];
@@ -118,10 +119,11 @@ class InputParamController extends AbstractController
     /**
      * @Route("/input_param/delete/{ids}",
      *     name="input_param_delete_many",
-     *     methods={"DELETE"},
+     *     methods={"POST"},
      *     requirements={"ids"="\d+(,\d)*"}
      *       )
      */
+    // SEMANTICALLY UNCORRECT : SHOULD BE A PATCH IN THE COLLECTION (not available in API-Platform <2.5)
     public function deleteMany(array $ids)
     {
         $statuses = [];
